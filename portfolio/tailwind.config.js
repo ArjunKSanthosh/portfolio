@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        black: "#0a0a0a",
+        // black: "#0a0a0a",
         orange: "#f97316", // Customize the orange shade
       },
       fontFamily: {
