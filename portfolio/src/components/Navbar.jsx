@@ -8,6 +8,7 @@ function Navbar() {
         <ul className="flex space-x-6">
           <li><a href="#about" className="hover:text-orange-500 transition">About</a></li>
           <li><a href="#projects" className="hover:text-orange-500 transition">Projects</a></li>
+          <li><a href="#education" className="hover:text-orange-500 transition">Education</a></li>
           <li><a href="#contact" className="hover:text-orange-500 transition">Contact</a></li>
         </ul>
       </div>

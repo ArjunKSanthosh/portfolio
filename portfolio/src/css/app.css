@@ -71,3 +71,149 @@
 .fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
+/* Add this to your App.css or a new CSS file */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+/* Add this to your App.css or a new CSS file */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Start lower for more visible effect */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards; /* Increased duration for smoother effect */
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+/* Add this to your App.css or a new CSS file */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px); /* Start from the left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px); /* Start from the right */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease forwards; /* Adjust duration as needed */
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease forwards; /* Adjust duration as needed */
+}
+
+/* Optional: You can add a delay class for staggered animations */
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+/* Add this to your App.css or a new CSS file */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px); /* Start from the left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px); /* Start from the right */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px); /* Start from the top */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Start from the bottom */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease forwards; /* Adjust duration as needed */
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease forwards; /* Adjust duration as needed */
+}
+
+.animate-slide-in-top {
+  animation: slideInTop 0.6s ease forwards; /* Adjust duration as needed */
+}
+
+.animate-slide-in-bottom {
+  animation: slideInBottom 0.6s ease forwards; /* Adjust duration as needed */
+}
