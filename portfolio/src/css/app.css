@@ -1,4 +1,4 @@
-/* Add this to your App.css or a new CSS file */
+/* Keyframes for animations */
 @keyframes revealFromLeft {
   from {
     opacity: 0;
@@ -52,6 +52,7 @@
   }
 }
 
+/* Animation classes */
 .reveal-left {
   animation: revealFromLeft 0.8s ease forwards;
 }
@@ -71,7 +72,7 @@
 .fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
-/* Add this to your App.css or a new CSS file */
+
 @keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -94,11 +95,11 @@
 .delay-400 {
   animation-delay: 0.4s;
 }
-/* Add this to your App.css or a new CSS file */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px); /* Start lower for more visible effect */
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -107,21 +108,13 @@
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease forwards; /* Increased duration for smoother effect */
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.delay-400 {
-  animation-delay: 0.4s;
-}
-/* Add this to your App.css or a new CSS file */
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px); /* Start from the left */
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
@@ -132,46 +125,7 @@
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(30px); /* Start from the right */
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.6s ease forwards; /* Adjust duration as needed */
-}
-
-.animate-slide-in-right {
-  animation: slideInRight 0.6s ease forwards; /* Adjust duration as needed */
-}
-
-/* Optional: You can add a delay class for staggered animations */
-.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.delay-400 {
-  animation-delay: 0.4s;
-}
-/* Add this to your App.css or a new CSS file */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px); /* Start from the left */
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px); /* Start from the right */
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
@@ -182,7 +136,7 @@
 @keyframes slideInTop {
   from {
     opacity: 0;
-    transform: translateY(-30px); /* Start from the top */
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
@@ -193,7 +147,76 @@
 @keyframes slideInBottom {
   from {
     opacity: 0;
-    transform: translateY(30px); /* Start from the bottom */
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease forwards;
+}
+
+.animate-slide-in-top {
+  animation: slideInTop 0.6s ease forwards;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInBottom 0.6s ease forwards;
+}
+/* Zoom and box shadow effect on hover */
+.zoom-shadow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zoom-shadow:hover {
+  transform: scale(1.05); /* Adjust the scale value as needed */
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5); /* Cyan color with some transparency */
+}
+/* Keyframes for slide-in animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -203,17 +226,118 @@
 
 /* Animation classes */
 .animate-slide-in-left {
-  animation: slideInLeft 0.6s ease forwards; /* Adjust duration as needed */
+  animation: slideInLeft 0.6s ease forwards;
 }
 
 .animate-slide-in-right {
-  animation: slideInRight 0.6s ease forwards; /* Adjust duration as needed */
+  animation: slideInRight 0.6s ease forwards;
 }
 
 .animate-slide-in-top {
-  animation: slideInTop 0.6s ease forwards; /* Adjust duration as needed */
+  animation: slideInTop 0.6s ease forwards;
 }
 
 .animate-slide-in-bottom {
-  animation: slideInBottom 0.6s ease forwards; /* Adjust duration as needed */
+  animation: slideInBottom 0.6s ease forwards;
+}
+
+/* Additional styles for fading in */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Icon hover effect */
+.icon-hover {
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.icon-hover:hover {
+  transform: scale(1.2); /* Scale the icon to 120% on hover */
+}
+
+/* Additional styles for the contact section */
+.contact-item {
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.contact-item:hover {
+  transform: scale(1.05); /* Scale the entire contact item slightly on hover */
+}
+/* Box shadow effect */
+.contact-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+  width: 300px; /* Set a fixed width for all items */
+  height: 70px; /* Set a fixed height for all items */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+
+.contact-item:hover {
+  transform: scale(1.05); /* Scale the entire contact item slightly on hover */
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5); /* Cyan color with some transparency */
+}
+
+/* Icon hover effect */
+.icon-hover {
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.icon-hover:hover {
+  transform: scale(1.2); /* Scale the icon to 120% on hover */
+}
+/* Box shadow effect */
+.contact-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Decreased transition duration */
+  width: 300px; /* Set a fixed width for all items */
+  height: 70px; /* Set a fixed height for all items */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+
+.contact-item:hover {
+  transform: scale(1.05); /* Scale the entire contact item slightly on hover */
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5); /* Cyan color with some transparency */
+}
+
+/* Icon hover effect */
+.icon-hover {
+  transition: transform 0.2s ease; /* Decreased transition duration */
+}
+
+.icon-hover:hover {
+  transform: scale(1.2); /* Scale the icon to 120% on hover */
+}
+/* Box shadow effect */
+.contact-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Decreased transition duration */
+  width: 300px; /* Set a fixed width for all items */
+  height: 70px; /* Set a fixed height for all items */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: flex-start; /* Align items to the left */
+  padding: 0 10px; /* Add some padding for better spacing */
+}
+
+.contact-item:hover {
+  transform: scale(1.05); /* Scale the entire contact item slightly on hover */
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5); /* Cyan color with some transparency */
+}
+
+/* Icon hover effect */
+.icon-hover {
+  transition: transform 0.2s ease; /* Decreased transition duration */
+}
+
+.icon-hover:hover {
+  transform: scale(1.2); /* Scale the icon to 120% on hover */
 }
