@@ -35,7 +35,7 @@ function About() {
           />
           <div className='w-8/12'>
             <h2 className={`text-6xl mt-5 font-sans ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.1s' }}>About Me</h2>
-            <h3 className={`text-l mt-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.3s' }}> Hey I'm,</h3>
+            <h3 className={`text-l text-red-500 mt-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.3s' }}> Hey I'm,</h3>
             <h3 className={`text-4xl mt-2 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.4s' }}> Arjun K Santhosh</h3>
             <p className={`mt-4 text-base w-5/6 m-auto text-justify indent-20 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.5s' }}>
               I'm a passionate web developer specializing in front-end technologies like React, JavaScript, and Tailwind CSS.
@@ -47,7 +47,7 @@ function About() {
             </p>
             {/* Download Resume Button */}
             <a 
-              href="/path-to-your-resume.pdf" // Replace with the actual path to your resume
+              href="Arjun  K Santhosh Resume.pdf" // Replace with the actual path to your resume
               download
               className={`mt-8 inline-block px-6 py-3 text-lg font-semibold text-white bg-gray-500 rounded-3xl shadow-lg transition-transform transform hover:scale-105 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`} 
               // style={{ transitionDelay: '0.1s' }}

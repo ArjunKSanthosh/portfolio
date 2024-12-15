@@ -44,7 +44,7 @@ function Skill() {
   return (
     <div id="skills" className="bg-gray-800  h-full">
       <div className="bg-gray-800 text-white p-8 mx-auto">
-        <h3 className="text-5xl mb-10 font-serif m-auto text-center">SKILLS</h3>
+        <h3 className="text-5xl mb-10 font-serif m-auto text-center">Skills</h3>
         <ul className="mt-4 w-3/5 flex justify-center flex-wrap gap-6 m-auto">
           {skills.map((skill, index) => {
             // Determine animation class based on index and visibility
