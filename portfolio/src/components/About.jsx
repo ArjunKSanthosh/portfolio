@@ -1,8 +1,7 @@
-// src/components/About.jsx
 import React, { useEffect, useState } from 'react';
 
 function About() {
-  const [isVisible, setIsVisible] = useState(true); // Start as visible
+  const [isVisible, setIsVisible] = useState(false); // Start as not visible
 
   useEffect(() => {
     const section = document.getElementById('about');
@@ -24,20 +23,26 @@ function About() {
   }, []);
 
   return (
-    <section id="about" className="py-8 text-black bg-yellow-300  min-h-screen">
-      <div className="container text-center">
-        <div className='flex justify-center items-center'>
-          <img 
-            src="arjun.jpg" 
-            alt="" 
-            className={`w-72 h-72 object-cover rounded-full mt-28 border-4 border-gray-800 transform transition-all duration-500 hover:scale-105 hover:shadow-lg hover:border-cyan-500 hover:shadow-cyan-500 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} 
-            style={{ transitionDelay: '0.2s' }}
-          />
-          <div className='w-8/12'>
-            <h2 className={`text-6xl mt-5 font-sans ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.1s' }}>About Me</h2>
-            <h3 className={`text-l text-red-500 mt-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.3s' }}> Hey I'm,</h3>
-            <h3 className={`text-4xl mt-2 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.4s' }}> Arjun K Santhosh</h3>
-            <p className={`mt-4 text-base w-5/6 m-auto text-justify indent-20 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.5s' }}>
+    <section 
+      id="about" 
+      className={`py-8 min-h-screen bg-cover bg-center transition-all duration-500`} // Add blur effect when visible
+      style={{ 
+        backgroundImage: 'url("cover2.jpg")', // Replace with your image path
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      <div className={`container transition-all duration-500 `}>
+        <h2 className={`text-6xl mb-12 text-center font-sans ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.1s', animationDuration: '1.5s' }}>
+          About Me
+        </h2>
+        <div className='flex flex-col sm:flex-row justify-between bg-white w-full sm:w-3/5 bg-opacity-75 rounded-e-full p-4'>
+          <div className='w-full'>
+            <h3 className={`text-l text-red-500 mt-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.3s', animationDuration: '1.5s' }}> Hey I'm,</h3>
+            <h3 className={`text-4xl mt-2 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.4s', animationDuration: '1.5s' }}>
+              Arjun K Santhosh
+            </h3>
+            <p className={`mt-4 text-base w-full sm:w-5/6 ml-5 text-justify indent-20 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.5s', animationDuration: '1.5s' }}>
               I'm a passionate web developer specializing in front-end technologies like React, JavaScript, and Tailwind CSS.
               As a passionate MERN stack developer, I specialize in creating dynamic, responsive, and user-centric web applications. 
               With expertise in MongoDB, Express.js, React, and Node.js, I enjoy building full-stack solutions that are both scalable and efficient. 
@@ -46,14 +51,16 @@ function About() {
               Whether it’s building APIs, managing databases, or crafting intuitive interfaces, I am committed to writing clean, maintainable code.
             </p>
             {/* Download Resume Button */}
-            <a 
-              href="Arjun  K Santhosh Resume.pdf" // Replace with the actual path to your resume
-              download
-              className={`mt-8 inline-block px-6 py-3 text-lg font-semibold text-white bg-gray-500 rounded-3xl shadow-lg transition-transform transform hover:scale-105 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`} 
-              // style={{ transitionDelay: '0.1s' }}
-            >
-              Download Resume
-            </a>
+            <div className="flex justify-center mt-8 mb-8">
+              <a 
+                href="Arjun K Santhosh Resume.pdf" // Replace with the actual path to your resume
+                download
+                className={`px-6 py-3 text-lg font-semibold text-white bg-gray-500 rounded-3xl shadow-lg transition-transform transform hover:scale-105 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`} 
+                style={{ transitionDelay: '0.6s', animationDuration: '1.5s' }}
+              >
+                Download Resume
+              </a>
+            </div>
           </div>
         </div>
       </div>
