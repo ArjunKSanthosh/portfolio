@@ -24,7 +24,7 @@ function About() {
   }, []);
 
   return (
-    <section id="about" className="py-8 text-white bg-gradient-to-r from-black to-gray-800 min-h-screen">
+    <section id="about" className="py-8 text-black bg-yellow-300  min-h-screen">
       <div className="container text-center">
         <div className='flex justify-center items-center'>
           <img 

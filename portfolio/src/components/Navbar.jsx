@@ -3,8 +3,8 @@ import React from 'react';
 
 function Navbar() {
   return (
-    <nav className="bg-gradient-to-r from-black to-gray-900 p-4 text-white shadow-lg sticky top-0 z-10">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-white p-4 text-black shadow-lg sticky top-0 z-10 h-20 content-center">
+      <div className="container m-auto flex justify-between items-center">
         <h2 className="text-xl font-serif text-orange-500">Arjun K Santhosh</h2>
         <ul className="flex space-x-6">
           <li><a href="#about" className="hover:text-orange-500 transition">About</a></li>
