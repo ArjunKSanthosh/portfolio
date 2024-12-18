@@ -1,7 +1,7 @@
 // src/components/Skills.jsx
 import React, { useEffect, useState } from "react";
 import { FaJs, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaDatabase, FaBootstrap, FaGithub } from 'react-icons/fa'; // Import icons
-import { SiC, SiCplusplus, SiMysql } from 'react-icons/si'; // Import icons for C, C++, and SQL
+import { SiC, SiCplusplus } from 'react-icons/si'; // Import icons for C and C++
 
 function Skill() {
   const [animationTriggered, setAnimationTriggered] = useState(false);
@@ -26,47 +26,42 @@ function Skill() {
   }, []);
 
   const skills = [
-    { name: "JavaScript", icon: <FaJs className="text-white" />, color: "bg-yellow-500" },
-    { name: "ReactJS", icon: <FaReact className="text-white" />, color: "bg-blue-600" },
-    { name: "NodeJS", icon: <FaNodeJs className="text-white" />, color: "bg-green-600" },
-    { name: "ExpressJS", icon: <FaNodeJs className="text-white" />, color: "bg-stone-600" },
-    { name: "HTML", icon: <FaHtml5 className="text-white" />, color: "bg-teal-400	" },
-    { name: "CSS", icon: <FaCss3Alt className="text-white" />, color: "bg-blue-500" },
-    { name: "MongoDB", icon: <FaDatabase className="text-white" />, color: "bg-green-500" },
-    { name: "Bootstrap", icon: <FaBootstrap className="text-white" />, color: "bg-purple-600" },
-    { name: "TailwindCSS", icon: <FaBootstrap className="text-white" />, color: "bg-purple-950" },
-    { name: "GitHub", icon: <FaGithub className="text-white" />, color: "bg-gray-800" },
-    { name: "C", icon: <SiC className="text-white" />, color: "bg-blue-700" }, // C icon
-    { name: "C++", icon: <SiCplusplus className="text-white" />, color: "bg-blue-800" }, // C++ icon
-   
+    { name: "JavaScript", icon: <FaJs className="text-yellow-600" /> },
+    { name: "ReactJS", icon: <FaReact className="text-yellow-600" /> },
+    { name: "NodeJS", icon: <FaNodeJs className="text-yellow-600" /> },
+    { name: "ExpressJS", icon: <FaNodeJs className="text-yellow-600" /> },
+    { name: "HTML", icon: <FaHtml5 className="text-yellow-600" /> },
+    { name: "CSS", icon: <FaCss3Alt className="text-yellow-600" /> },
+    { name: "MongoDB", icon: <FaDatabase className="text-yellow-600" /> },
+    { name: "Bootstrap", icon: <FaBootstrap className="text-yellow-600" /> },
+    { name: "TailwindCSS", icon: <FaBootstrap className="text-yellow-600"  />},,
+    { name: "GitHub", icon: <FaGithub className="text-yellow-600" /> },
+    { name: "C", icon: <SiC className="text-yellow-600" /> },
+    { name: "C++", icon: <SiCplusplus className="text-yellow-600" /> },
   ];
 
   return (
-    <div id="skills" className="bg-gray-800  h-full">
-      <div className="bg-gray-800 text-white p-8 mx-auto">
-        <h3 className="text-5xl mb-10 font-serif m-auto text-center">Skills</h3>
-        <ul className="mt-4 w-3/5 flex justify-center flex-wrap gap-6 m-auto">
+    <div id="skills" className="bg-gradient-to-r from-yellow-200 to-yellow-400 py-20">
+      <div className="container mx-auto text-center w-4/12">
+        <h3 className="text-4xl font-semibold text-yellow-800 mb-10">Technical Skills</h3>
+        <ul className="flex flex-wrap justify-center gap-6">
           {skills.map((skill, index) => {
-            // Determine animation class based on index and visibility
-            const animationClass = animationTriggered
-              ? index % 4 === 0
-                ? 'animate-slide-in-left'
-                : index % 4 === 1
-                ? 'animate-slide-in-right'
-                : index % 4 === 2
-                ? 'animate-slide-in-top'
-                : 'animate-slide-in-bottom'
+            // Determine animation class based on index
+            const animationClass = animationTriggered 
+              ? index % 2 === 0 
+                ? 'animate-slide-in-left' 
+                : 'animate-slide-in-right' 
               : 'opacity-0';
 
             return (
               <li
                 key={skill.name}
-                className={`flex items-center justify-center p-4 rounded-lg shadow-lg transition-all duration-300 w-40 h-20 text-center text-lg font-semibold transform hover:scale-110 hover:shadow-lg hover:shadow-cyan-500 ${skill.color} ${animationClass}`}
+                className={`flex items-center justify-center p-6 rounded-2xl  gap-12 shadow-lg transition-all duration-300 w-32 h-32 text-lg font-medium text-center bg-white border border-yellow-300 hover:shadow-xl hover:scale-105 ${animationClass}`}
                 style={{ animationDelay: `${index * 100}ms` }} // Stagger the animation
               >
-                <div className="flex items-center justify-center">
+                <div className="flex flex-col items-center">
                   {skill.icon} {/* Render the icon */}
-                  <span className="ml-2">{skill.name}</span> {/* Skill name */}
+                  <span className="mt-2 text-black font-semibold">{skill.name}</span> {/* Skill name */}
                 </div>
               </li>
             );
