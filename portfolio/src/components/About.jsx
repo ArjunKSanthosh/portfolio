@@ -27,7 +27,7 @@ function About() {
       id="about" 
       className={`py-8 min-h-screen bg-cover bg-center transition-all duration-500`}
       style={{ 
-        backgroundImage: 'url("cover2.jpg")',
+        backgroundImage: 'url("arjun2.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}

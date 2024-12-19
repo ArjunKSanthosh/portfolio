@@ -14,7 +14,7 @@ function ProjectImage({ imgSrc, title, projectLink, isVisible }) {
         <img 
           src={imgSrc} 
           alt={`Image of ${title}`}
-          className={`w-full h-auto rounded-lg shadow-lg transition-transform duration-300 ${isHovered ? 'filter grayscale' : ''}`}
+          className={`w-full h-auto  shadow-lg transition-all  duration-500 transform hover:scale-110 ${isHovered ? 'filter grayscale' : ''}`}
         />
       </a>
       {isHovered && (
@@ -22,7 +22,7 @@ function ProjectImage({ imgSrc, title, projectLink, isVisible }) {
           href={projectLink} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white py-2 px-4 rounded transition-all duration-300 opacity-100 hover:opacity-80"
+          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white py-2 px-4 rounded transition-all duration-500 opacity-100 hover:opacity-80"
         >
           View Project
         </a>
@@ -34,9 +34,9 @@ function ProjectImage({ imgSrc, title, projectLink, isVisible }) {
 // Component for displaying the project description
 function ProjectDescription({ title, description, isVisible }) {
   return (
-    <div className={`w-1/2 p-4 transition-transform duration-500 ${isVisible ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-10 opacity-0'}`}>
-      <h2 className={`text-3xl font-bold text-black ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>{title}</h2>
-      <p className={`mt-4 text-black ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+    <div className={`w-1/2 p-4 transition-transform duration-500 bg-black text-white ${isVisible ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-10 opacity-0'}`}>
+      <h2 className={`text-3xl font-bold ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>{title}</h2>
+      <p className={`mt-4 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
         {description}
       </p>
     </div>
@@ -80,9 +80,9 @@ function ProjectDetails() {
             return newVisible;
           });
         } else {
-          setVisibleProjects((prev) => {
+          setVisibleProjects(( prev) => {
             const newVisible = [...prev];
-            newVisible[index] = false; // Reset to false when out of view
+            newVisible[index] = false; // Set to false when out of view
             return newVisible;
           });
         }
@@ -94,17 +94,21 @@ function ProjectDetails() {
   }, []);
 
   return (
-    <div className="flex flex-col space-y-8 text-black   p-4 bg-yellow-300">
-      {/* Title for My Projects */}
-      <h2 className="text-4xl font-bold text-center text-black 800 mb-6">My Projects</h2>
-      
+    <div className="flex flex-col items-center ">
+      <h2 className="text-4xl font-bold my-8">My Projects</h2>
       {projects.map((project, index) => (
-        <div key={index} className={`flex justify-between items-center bg-neutral-300		 rounded-lg shadow-lg text-black p-4 project ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'}`}>
-          {/* Left Div for Project Image */}
-          <ProjectImage imgSrc={project.imgSrc} title={project.title} projectLink={project.projectLink} isVisible={visibleProjects[index]} />
-          
-          {/* Right Div for Project Description */}
-          <ProjectDescription title={project.title} description={project.description} isVisible={visibleProjects[index]} />
+        <div key={index} className="project flex flex-row w-full max-w-4xl my-8 justify-between overflow-hidden">
+          <ProjectImage 
+            imgSrc={project.imgSrc} 
+            title={project.title} 
+            projectLink={project.projectLink} 
+            isVisible={visibleProjects[index]} 
+          />
+          <ProjectDescription 
+            title={project.title} 
+            description={project.description} 
+            isVisible={visibleProjects[index]} 
+          />
         </div>
       ))}
     </div>
