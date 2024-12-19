@@ -6,7 +6,7 @@ function ProjectImage({ imgSrc, title, projectLink, isVisible }) {
 
   return (
     <div 
-      className={`relative w-1/2 transition-transform  duration-500 ${isVisible ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-10 opacity-0'}`}
+      className={`relative w-full sm:w-1/2 transition-transform duration-500 ${isVisible ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-10 opacity-0'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -14,7 +14,7 @@ function ProjectImage({ imgSrc, title, projectLink, isVisible }) {
         <img 
           src={imgSrc} 
           alt={`Image of ${title}`}
-          className={`w-full h-auto rounded-s-xl shadow-lg transition-all  duration-500 transform hover:scale-110 ${isHovered ? 'filter grayscale' : ''}`}
+          className={`w-full h-auto rounded-s-xl shadow-lg transition-all duration-500 transform hover:scale-110 ${isHovered ? 'filter grayscale' : ''}`}
         />
       </a>
       {isHovered && (
@@ -22,7 +22,7 @@ function ProjectImage({ imgSrc, title, projectLink, isVisible }) {
           href={projectLink} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="absolute bottom-4 left-1/2  transform -translate-x-1/2 bg-yellow-500 text-white py-2 px-4 rounded transition-all duration-500 opacity-100 hover:opacity-80"
+          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white py-2 px-4 rounded transition-all duration-500 opacity-100 hover:opacity-80"
         >
           View Project
         </a>
@@ -34,7 +34,7 @@ function ProjectImage({ imgSrc, title, projectLink, isVisible }) {
 // Component for displaying the project description
 function ProjectDescription({ title, description, isVisible }) {
   return (
-    <div className={`w-1/2 p-4 transition-transform rounded-e-xl  duration-500 bg-black text-white ${isVisible ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-10 opacity-0'}`}>
+    <div className={`w-full sm:w-1/2 p-4 transition-transform rounded-e-xl duration-500 bg-black text-white ${isVisible ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-10 opacity-0'}`}>
       <h2 className={`text-3xl font-bold ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>{title}</h2>
       <p className={`mt-4 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
         {description}
@@ -80,7 +80,7 @@ function ProjectDetails() {
             return newVisible;
           });
         } else {
-          setVisibleProjects(( prev) => {
+          setVisibleProjects((prev) => {
             const newVisible = [...prev];
             newVisible[index] = false; // Set to false when out of view
             return newVisible;
@@ -94,10 +94,10 @@ function ProjectDetails() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center bg-yellow-300 ">
+    <div className="flex flex-col items-center bg-yellow-400 py-8">
       <h2 className="text-4xl font-bold my-8">My Projects</h2>
       {projects.map((project, index) => (
-        <div key={index} className="project flex flex-row w-full  max-w-4xl my-8 justify-between overflow-hidden">
+        <div key={index} className="project flex flex-col sm:flex-row w-full max-w-4xl my-8 justify-between overflow-hidden">
           <ProjectImage 
             imgSrc={project.imgSrc} 
             title={project.title} 

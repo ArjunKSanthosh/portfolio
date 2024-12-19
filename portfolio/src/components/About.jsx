@@ -25,27 +25,27 @@ function About() {
   return (
     <section 
       id="about" 
-      className={`py-8 min-h-screen bg-cover bg-center transition-all duration-500`}
+      className="py-8 min-h-screen bg-cover bg-center transition-all duration-500"
       style={{ 
         backgroundImage: 'url("arjun2.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
     >
-      <div className={`container transition-all duration-500`}>
-        <h2 className={`text-6xl mb-12 text-center font-sans text-rose-800 font-extrabold ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.1s', animationDuration: '1.5s' }}>
+      <div className="container transition-all duration-500">
+        <h2 className={`text-4xl md:text-6xl mb-12 text-center font-sans text-rose-800 font-extrabold ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.1s', animationDuration: '1.5s' }}>
           About Me
         </h2>
         <div className='flex flex-col sm:flex-row justify-between bg-white w-full sm:w-3/5 bg-opacity-75 rounded-e-full p-4'>
           <div className='w-full'>
-            <h3 className={`text-l text-red-500 mt-8 ml-4 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.3s', animationDuration: '1.5s' }}> Hey I'm,</h3>
-            <h3 className={`text-5xl mt-2 ml-4 font-bold	 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.4s', animationDuration: '1.5s' }}>
+            <h3 className={`text-lg sm:text-xl text-red-500 mt-8 ml-4 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.3s', animationDuration: '1.5s' }}> Hey I'm,</h3>
+            <h3 className={`text-3xl sm:text-5xl mt-2 ml-4 font-bold ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.4s', animationDuration: '1.5s' }}>
               Arjun 
             </h3>
-            <h3 className={`text-5xl mt-2 ml-4 font-bold	 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.4s', animationDuration: '1.5s' }}>
+            <h3 className={`text-3xl sm:text-5xl mt-2 ml-4 font-bold ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ transitionDelay: '0.4s', animationDuration: '1.5s' }}>
                K Santhosh
             </h3>
-            <p className={`mt-4 text-base w-full sm:w-5/6 ml-5 text-justify indent-20 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.5s', animationDuration: '1.5s' }}>
+            <p className={`mt-4 text-base sm:text-lg w-full sm:w-5/6 ml-5 text-justify indent-20 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ transitionDelay: '0.5s', animationDuration: '1.5s' }}>
               I'm a passionate web developer specializing in front-end technologies like React, JavaScript, and Tailwind CSS.
               As a passionate MERN stack developer, I specialize in creating dynamic, responsive, and user-centric web applications. 
               With expertise in MongoDB, Express.js, React, and Node.js, I enjoy building full-stack solutions that are both scalable and efficient. 
@@ -54,7 +54,7 @@ function About() {
               Whether it’s building APIs, managing databases, or crafting intuitive interfaces, I am committed to writing clean, maintainable code.
             </p>
             {/* Download Resume Button */}
-            <div className="flex justify-center  mt-8 mb-8">
+            <div className="flex justify-center mt-8 mb-8">
               <a 
                 href="Arjun K Santhosh Resume.pdf" // Replace with the actual path to your resume
                 download
@@ -66,35 +66,33 @@ function About() {
             </div>
 
             {/* Social Icons Section */}
-            <div className="flex justify-center gap-6 mt-8">
+            <div className="flex justify-center gap-6 mt-8 flex-wrap">
               <a 
-                href="https://github.com/your-username" // Replace with your actual GitHub profile link
+                href="https://github.com/ArjunKSanthosh" // Replace with your actual GitHub profile link
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-2xl text-gray-700 transition-transform duration-400 border-e-2 w-12 border-black transform hover:scale-110 hover:text-red-950 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} 
-                
+                className={`text-2xl sm:text-3xl text-gray-700 transition-transform duration-400 border-e-2 w-12 sm:w-14 border-black transform hover:scale-110 hover:text-red-950 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}
               >
                 <FaGithub />
               </a>
               <a 
-                href="mailto:youremail@example.com" // Replace with your email address
-                className={`text-2xl text-gray-700 transition-transform transform duration-500 border-e-2 w-12  border-black hover:scale-110 hover:text-red-950 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`} 
-                
+                href="mailto:arjunk80043@gmail.com" // Replace with your email address
+                className={`text-2xl sm:text-3xl text-gray-700 transition-transform transform duration-500 border-e-2 w-12 sm:w-14 border-black hover:scale-110 hover:text-red-950 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
               >
                 <FaEnvelope />
               </a>
               <a 
-                href="tel:+1234567890" // Replace with your phone number
-                className={`text-2xl text-gray-700 transition-transform transform border-e-2 w-12  border-black hover:scale-110 hover:text-red-950 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} 
+                href="tel:+919072240203" // Replace with your phone number
+                className={`text-2xl sm:text-3xl text-gray-700 transition-transform transform border-e-2 w-12 sm:w-14 border-black hover:scale-110 hover:text-red-950 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}
                 style={{ transitionDelay: '0.7s', animationDuration: '1.5s' }}
               >
                 <FaPhoneAlt />
               </a>
               <a 
-                href="https://www.linkedin.com/in/your-profile" // Replace with your LinkedIn profile link
+                href="https://www.linkedin.com/in/arjun-k-santhosh-650a18294/" // Replace with your LinkedIn profile link
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-2xl text-gray-700 transition-transform transform border-e-2 w-12  border-black hover:scale-110 hover:text-red-950 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`} 
+                className={`text-2xl sm:text-3xl text-gray-700 transition-transform transform border-e-2 w-12 sm:w-14 border-black hover:scale-110 hover:text-red-950 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}
                 style={{ transitionDelay: '0.7s', animationDuration: '1.5s' }}
               >
                 <FaLinkedin />

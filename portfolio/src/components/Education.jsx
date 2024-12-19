@@ -3,25 +3,27 @@ import React, { useEffect, useState } from 'react';
 import { FaGraduationCap, FaLaptopCode, FaSchool } from 'react-icons/fa';
 
 function Education() {
-  const [isVisible, setIsVisible] = useState(true); // Start as visible
+  const [isVisible, setIsVisible] = useState(false); // Start as not visible
+  const [animationClass, setAnimationClass] = useState('');
 
   useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById('education');
-      const rect = section.getBoundingClientRect();
-      // Check if the section is in the viewport
-      if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false); // Reset visibility when out of view
-      }
-    };
+    const section = document.getElementById('education');
 
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-    
-    // Cleanup function to remove the event listener
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          setAnimationClass('animate-slide-in'); // Set animation class when in view
+        } else {
+          setIsVisible(false);
+          setAnimationClass(''); // Reset animation class when out of view
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -61,7 +63,7 @@ function Education() {
           ].map((edu, index) => (
             <div
               key={index}
-              className={`flex items-center justify-between w-full max-w-4xl bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
+              className={`flex items-center justify-between w-full max-w-4xl bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl ${animationClass}`}
               style={{ transitionDelay: `${index * 100}ms` }} // Stagger the animation
             >
               <div className="flex items-center w-1/2">
